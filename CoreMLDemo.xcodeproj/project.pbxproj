@@ -12,6 +12,7 @@
 		2897083D1FA0C1C200FF83E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2897083B1FA0C1C200FF83E6 /* Main.storyboard */; };
 		2897083F1FA0C1C200FF83E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2897083E1FA0C1C200FF83E6 /* Assets.xcassets */; };
 		289708421FA0C1C200FF83E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 289708401FA0C1C200FF83E6 /* LaunchScreen.storyboard */; };
+		2897084A1FA0C3AB00FF83E6 /* LinearRegression.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 289708491FA0C3AB00FF83E6 /* LinearRegression.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		2897083E1FA0C1C200FF83E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		289708411FA0C1C200FF83E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		289708431FA0C1C200FF83E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		289708491FA0C3AB00FF83E6 /* LinearRegression.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = LinearRegression.mlmodel; path = linear_regression/LinearRegression.mlmodel; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		289708361FA0C1C200FF83E6 /* CoreMLDemo */ = {
 			isa = PBXGroup;
 			children = (
+				289708491FA0C3AB00FF83E6 /* LinearRegression.mlmodel */,
 				289708371FA0C1C200FF83E6 /* AppDelegate.swift */,
 				289708391FA0C1C200FF83E6 /* ViewController.swift */,
 				2897083B1FA0C1C200FF83E6 /* Main.storyboard */,
@@ -137,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2897083A1FA0C1C200FF83E6 /* ViewController.swift in Sources */,
+				2897084A1FA0C3AB00FF83E6 /* LinearRegression.mlmodel in Sources */,
 				289708381FA0C1C200FF83E6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
