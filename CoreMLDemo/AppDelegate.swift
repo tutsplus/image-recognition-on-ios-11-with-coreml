@@ -17,10 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        let model = LinearRegression()
-        let result = try! model.prediction(value: 2.3)
-        
-        print(result.prediction)
+//        let model = LinearRegression()
+//        let result = try! model.prediction(value: 2.3)
+//        
+//        print(result.prediction)
         
         return true
     }
