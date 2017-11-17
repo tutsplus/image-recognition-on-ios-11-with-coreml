@@ -26,11 +26,20 @@
                                             <action selector="takePicture" destination="BYZ-38-t0r" id="TyH-Sd-c3o"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="EXl-s3-N95"/>
+                                    <barButtonItem systemItem="play" id="dap-LA-XdN">
+                                        <connections>
+                                            <action selector="toggleCamera" destination="BYZ-38-t0r" id="cbj-YO-phm"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v3c-g6-YAS">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                             </imageView>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rak-VE-8ps">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                            </arscnView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6S-ye-GgE">
                                 <rect key="frame" x="166" y="582" width="42" height="21"/>
                                 <color key="backgroundColor" red="0.9999127984046936" green="1" blue="0.99988144636154175" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
@@ -49,11 +58,15 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3O5-nb-2ef" secondAttribute="bottom" id="5pB-y5-Z6e"/>
+                            <constraint firstItem="Rak-VE-8ps" firstAttribute="width" secondItem="v3c-g6-YAS" secondAttribute="width" id="7Yn-ve-HRa"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="A6S-ye-GgE" secondAttribute="trailing" constant="20" id="9rK-My-fDG"/>
                             <constraint firstItem="sGV-8A-i5P" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Adf-Rh-TNd"/>
+                            <constraint firstItem="Rak-VE-8ps" firstAttribute="height" secondItem="v3c-g6-YAS" secondAttribute="height" id="LV8-Ul-ldF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="sGV-8A-i5P" secondAttribute="trailing" constant="20" id="SBO-DS-hSp"/>
+                            <constraint firstItem="Rak-VE-8ps" firstAttribute="centerY" secondItem="v3c-g6-YAS" secondAttribute="centerY" id="VlZ-JI-ofx"/>
                             <constraint firstItem="3O5-nb-2ef" firstAttribute="top" secondItem="v3c-g6-YAS" secondAttribute="bottom" id="XyH-Km-Psq"/>
                             <constraint firstItem="A6S-ye-GgE" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ZB5-fl-fph"/>
+                            <constraint firstItem="Rak-VE-8ps" firstAttribute="centerX" secondItem="v3c-g6-YAS" secondAttribute="centerX" id="dQY-L1-QTC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="v3c-g6-YAS" secondAttribute="trailing" id="hmd-WS-utU"/>
                             <constraint firstItem="3O5-nb-2ef" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hoy-4W-8p2"/>
                             <constraint firstItem="v3c-g6-YAS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jR5-8W-XSz"/>
@@ -66,6 +79,7 @@
                     </view>
                     <connections>
                         <outlet property="imageView" destination="v3c-g6-YAS" id="d4H-DU-AiJ"/>
+                        <outlet property="sceneView" destination="Rak-VE-8ps" id="YVQ-hy-C4d"/>
                         <outlet property="squeezeClassificationLabel" destination="sGV-8A-i5P" id="Pq1-R4-fRy"/>
                         <outlet property="vggClassificationLabel" destination="A6S-ye-GgE" id="BFv-23-zYg"/>
                     </connections>

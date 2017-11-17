@@ -8,12 +8,14 @@
 
 import UIKit
 import Vision
+import ARKit
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var vggClassificationLabel : UILabel!
     @IBOutlet weak var squeezeClassificationLabel : UILabel!
     @IBOutlet weak var imageView : UIImageView!
+    @IBOutlet weak var sceneView : ARSCNView!
     
     lazy var vggModel : VNCoreMLRequest = {
         do {
@@ -44,6 +46,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        sceneView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(classifyVideo)))
     }
 
     override func didReceiveMemoryWarning() {
@@ -99,6 +103,34 @@ class ViewController: UIViewController {
         picker.delegate = self
         picker.sourceType = .photoLibrary
         present(picker, animated: true)
+    }
+    
+    @IBAction func toggleCamera() {
+        if imageView.isHidden {
+            imageView.isHidden = false
+            sceneView.isHidden = true
+            sceneView.session.pause()
+        } else {
+            imageView.isHidden = true
+            sceneView.isHidden = false
+            sceneView.session.run(ARWorldTrackingConfiguration())
+        }
+    }
+    
+    @objc func classifyVideo() {
+        vggClassificationLabel.text = "Classifying..."
+        
+        guard let pixelBuffer = sceneView.session.currentFrame?.capturedImage else { return }
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+            let handler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: .upMirrored)
+            
+            do {
+                try handler.perform([self.vggModel])
+            } catch {
+                
+            }
+        }
     }
 }
 
